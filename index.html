@@ -2,37 +2,35 @@
 <html>
 <head>
   <title>SME Questionnaire Full Analysis Tool</title>
- <style>
-  /* Base styling (unchanged) */
-  body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f9; color: #333; }
-  h1 { color: #1f4e79; }
-  section { background: #fff; padding: 15px 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-  label { font-weight: bold; display: block; margin-top: 10px; }
-  input[type="number"], select, textarea { width: 100%; padding: 6px 8px; margin-top: 4px; border-radius: 4px; border: 1px solid #ccc; }
-  input[type="radio"], input[type="checkbox"] { width: auto; margin-right: 5px; }
-  button { margin-top: 10px; padding: 10px 15px; border: none; border-radius: 5px; background-color: #1f4e79; color: white; cursor: pointer; }
-  button:hover { background-color: #3a6ea5; }
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f9; color: #333; }
+    h1 { color: #1f4e79; }
+    section { background: #fff; padding: 15px 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    label { font-weight: bold; display: block; margin-top: 10px; }
+    input[type="number"], select, textarea { width: 100%; padding: 6px 8px; margin-top: 4px; border-radius: 4px; border: 1px solid #ccc; }
+    input[type="radio"], input[type="checkbox"] { width: auto; margin-right: 5px; }
+    button { margin-top: 10px; padding: 10px 15px; border: none; border-radius: 5px; background-color: #1f4e79; color: white; cursor: pointer; }
+    button:hover { background-color: #3a6ea5; }
 
-  /* --- RESPONSIVE STYLING --- */
-  @media screen and (max-width: 768px) {
-    body { margin: 10px; font-size: 16px; }
-    section { padding: 10px 15px; }
-    input[type="number"], select, textarea { font-size: 16px; padding: 8px; }
-    label { font-size: 16px; margin-top: 8px; }
-    button { width: 100%; padding: 12px; font-size: 16px; }
-    input[type="radio"], input[type="checkbox"] { margin-right: 10px; margin-bottom: 5px; }
-  }
+    /* --- RESPONSIVE STYLING --- */
+    @media screen and (max-width: 768px) {
+      body { margin: 10px; font-size: 16px; }
+      section { padding: 10px 15px; }
+      input[type="number"], select, textarea { font-size: 16px; padding: 8px; }
+      label { font-size: 16px; margin-top: 8px; }
+      button { width: 100%; padding: 12px; font-size: 16px; }
+      input[type="radio"], input[type="checkbox"] { margin-right: 10px; margin-bottom: 5px; }
+    }
 
-  @media screen and (max-width: 480px) {
-    body { font-size: 15px; }
-    h1 { font-size: 22px; }
-    section { padding: 8px 10px; }
-    input[type="number"], select, textarea { font-size: 15px; }
-    label { font-size: 15px; }
-    button { font-size: 15px; padding: 10px; }
-  }
-</style>
-
+    @media screen and (max-width: 480px) {
+      body { font-size: 15px; }
+      h1 { font-size: 22px; }
+      section { padding: 8px 10px; }
+      input[type="number"], select, textarea { font-size: 15px; }
+      label { font-size: 15px; }
+      button { font-size: 15px; padding: 10px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -148,8 +146,10 @@
   <input type="number" name="d5" min="1" max="5" required><br><br>
 
   <h2>SECTION E: STRATEGIES</h2>
-  <label>e1. Would you like digital training:</label>
-  <input type="number" name="e1" min="1" max="5" required><br><br>
+
+  <label>e1. Would you like digital training?</label><br>
+  <input type="radio" name="e1" value="Yes" required> Yes
+  <input type="radio" name="e1" value="No"> No<br><br>
 
   <label>e2. Support needed:</label><br>
   <input type="checkbox" name="e2" value="Tools"> Tools
@@ -189,8 +189,8 @@ function stdDev(arr){ const m=mean(arr); return Math.sqrt(arr.reduce((a,b)=>a+Ma
 function pearsonCorrelation(x,y){ const n=x.length; const meanX=mean(x), meanY=mean(y); let num=0,denX=0,denY=0; for(let i=0;i<n;i++){num+=(x[i]-meanX)*(y[i]-meanY); denX+=Math.pow(x[i]-meanX,2); denY+=Math.pow(y[i]-meanY,2);} return num/Math.sqrt(denX*denY); }
 function linearRegression(x,y){ const n=x.length; const meanX=mean(x), meanY=mean(y); let num=0,den=0; for(let i=0;i<n;i++){num+=(x[i]-meanX)*(y[i]-meanY); den+=Math.pow(x[i]-meanX,2);} const slope=num/den; const intercept=meanY-slope*meanX; return {slope,intercept}; }
 
-// Only numeric input fields
-const numericQuestions=["b1","b2","b3","b4","c1","c2","c3","c4","c5","d1","d2","d5","e1"];
+// Numeric fields for analysis (exclude e1 Yes/No)
+const numericQuestions=["b1","b2","b3","b4","c1","c2","c3","c4","c5","d1","d2","d5"];
 const checkboxFields=["d3","e2"];
 
 document.getElementById("questionnaireForm").addEventListener("submit", function(e){
@@ -262,5 +262,3 @@ document.getElementById("downloadCsv").addEventListener("click", downloadCSV);
 
 </body>
 </html>
-
-
