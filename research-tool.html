@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SME Questionnaire Full Analysis Tool</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f9; color: #333; }
+    h1 { color: #1f4e79; }
+    section { background: #fff; padding: 15px 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    label { font-weight: bold; display: block; margin-top: 10px; }
+    input[type="number"], select, textarea { width: 100%; padding: 6px 8px; margin-top: 4px; border-radius: 4px; border: 1px solid #ccc; }
+    input[type="radio"], input[type="checkbox"] { width: auto; margin-right: 5px; }
+    button { margin-top: 10px; padding: 10px 15px; border: none; border-radius: 5px; background-color: #1f4e79; color: white; cursor: pointer; }
+    button:hover { background-color: #3a6ea5; }
+  </style>
+</head>
+<body>
+
+<h1>SME Questionnaire – Full Analysis Tool</h1>
+
+<section>
+<form id="questionnaireForm">
+  <h2>SECTION A: DEMOGRAPHICS</h2>
+  <label>a1. Gender:</label>
+  <input type="radio" name="a1" value="Male" required> Male
+  <input type="radio" name="a1" value="Female"> Female<br><br>
+
+  <label>a2. Age Range:</label>
+  <select name="a2" required>
+    <option value="">Select</option>
+    <option>Below 25</option>
+    <option>25–34</option>
+    <option>35–44</option>
+    <option>45–54</option>
+    <option>55-64</option>
+    <option>65+</option>
+  </select><br><br>
+
+  <label>a3. Years in Business:</label>
+  <select name="a3" required>
+    <option value="">Select</option>
+    <option>Less than 5</option>
+    <option>5–10</option>
+    <option>11–20</option>
+    <option>20+</option>
+  </select><br><br>
+
+  <label>a4. Business Sector:</label>
+  <select name="a4" required>
+    <option value="">Select</option>
+    <option>Agriculture/Agro Processing</option>
+    <option>Retail/Trading</option>
+    <option>Manufacturing</option>
+    <option>Services</option>
+    <option>Other</option>
+  </select><br><br>
+
+  <label>a5. Number of Employees:</label>
+  <select name="a5" required>
+    <option value="">Select</option>
+    <option>1–10</option>
+    <option>11–49</option>
+    <option>50–99</option>
+    <option>100–249</option>
+  </select><br><br>
+
+  <label>a6. Location in Kogi State:</label>
+  <select name="a6" required>
+    <option value="">Select</option>
+    <option>Lokoja</option>
+    <option>Adavi</option>
+    <option>Koton-Karfe</option>
+  </select><br><br>
+
+  <h2>SECTION B: IMPACT OF DIGITALIZATION (1–5)</h2>
+  <label>b1. Digital tools improved sales:</label>
+  <input type="number" name="b1" min="1" max="5" required><br><br>
+
+  <label>b2. Digitalization is important for business survival:</label>
+  <input type="number" name="b2" min="1" max="5" required><br><br>
+
+  <label>b3. Digitalization reduced operational cost:</label>
+  <input type="number" name="b3" min="1" max="5" required><br><br>
+
+  <label>b4. Customer satisfaction increased:</label>
+  <input type="number" name="b4" min="1" max="5" required><br><br>
+
+  <h2>SECTION C: CHALLENGES (1–5)</h2>
+  <label>c1. High cost limits adoption:</label>
+  <input type="number" name="c1" min="1" max="5" required><br><br>
+
+  <label>c2. Poor Internet affects digital usage:</label>
+  <input type="number" name="c2" min="1" max="5" required><br><br>
+
+  <label>c3. Lack of digital skills is a major challenge:</label>
+  <input type="number" name="c3" min="1" max="5" required><br><br>
+
+  <label>c4. Cybersecurity risks discourage adoption:</label>
+  <input type="number" name="c4" min="1" max="5" required><br><br>
+
+  <label>c5. Government support is inadequate:</label>
+  <input type="number" name="c5" min="1" max="5" required><br><br>
+
+  <h2>SECTION D: DIGITAL TOOLS & INFRASTRUCTURE</h2>
+  <label>d1. Market reach expanded:</label>
+  <input type="number" name="d1" min="1" max="5" required><br><br>
+
+  <label>d2. Digital productivity increased:</label>
+  <input type="number" name="d2" min="1" max="5" required><br><br>
+
+  <label>d3. Types of digital tools used:</label><br>
+  <input type="checkbox" name="d3" value="Social Media"> Social Media
+  <input type="checkbox" name="d3" value="E-commerce"> E-commerce
+  <input type="checkbox" name="d3" value="POS"> POS
+  <input type="checkbox" name="d3" value="CRM"> CRM
+  <input type="checkbox" name="d3" value="Accounting Software"> Accounting Software<br><br>
+
+  <label>d4. Frequency of use:</label>
+  <select name="d4" required>
+    <option value="">Select</option>
+    <option>Daily</option>
+    <option>Weekly</option>
+    <option>Monthly</option>
+    <option>Rarely</option>
+  </select><br><br>
+
+  <label>d5. My business has required digital skills:</label>
+  <input type="number" name="d5" min="1" max="5" required><br><br>
+
+  <h2>SECTION E: STRATEGIES</h2>
+  <label>e1. Would you like digital training:</label>
+  <input type="number" name="e1" min="1" max="5" required><br><br>
+
+  <label>e2. Support needed:</label><br>
+  <input type="checkbox" name="e2" value="Tools"> Tools
+  <input type="checkbox" name="e2" value="Better-Internet"> Better Internet
+  <input type="checkbox" name="e2" value="Govt-Funding"> Govt Funding
+  <input type="checkbox" name="e2" value="Training"> Training
+  <input type="checkbox" name="e2" value="ICT"> ICT<br><br>
+
+  <label>e3. Preparedness for digital expansion:</label>
+  <select name="e3" required>
+    <option value="">Select</option>
+    <option>Very Prepared</option>
+    <option>Prepared</option>
+    <option>Unsure</option>
+    <option>Not Prepared</option>
+  </select><br><br>
+
+  <label>e4. Additional Comments:</label>
+  <textarea name="e4" rows="3"></textarea><br><br>
+
+  <button type="submit">Submit Response</button>
+</form>
+</section>
+
+<section>
+<button id="downloadCsv">Download CSV with Full Analysis</button>
+</section>
+
+<script>
+let responses = [];
+
+// Helper functions
+function mean(arr){ return arr.reduce((a,b)=>a+b,0)/arr.length; }
+function median(arr){ const s=[...arr].sort((a,b)=>a-b); const mid=Math.floor(s.length/2); return arr.length%2===0?(s[mid-1]+s[mid])/2:s[mid]; }
+function mode(arr){ const freq={}; arr.forEach(v=>freq[v]=(freq[v]||0)+1); let maxFreq=0,modeVal; for(const key in freq){ if(freq[key]>maxFreq){ maxFreq=freq[key]; modeVal=key; }} return modeVal; }
+function stdDev(arr){ const m=mean(arr); return Math.sqrt(arr.reduce((a,b)=>a+Math.pow(b-m,2),0)/arr.length); }
+function pearsonCorrelation(x,y){ const n=x.length; const meanX=mean(x), meanY=mean(y); let num=0,denX=0,denY=0; for(let i=0;i<n;i++){num+=(x[i]-meanX)*(y[i]-meanY); denX+=Math.pow(x[i]-meanX,2); denY+=Math.pow(y[i]-meanY,2);} return num/Math.sqrt(denX*denY); }
+function linearRegression(x,y){ const n=x.length; const meanX=mean(x), meanY=mean(y); let num=0,den=0; for(let i=0;i<n;i++){num+=(x[i]-meanX)*(y[i]-meanY); den+=Math.pow(x[i]-meanX,2);} const slope=num/den; const intercept=meanY-slope*meanX; return {slope,intercept}; }
+
+// Only numeric input fields
+const numericQuestions=["b1","b2","b3","b4","c1","c2","c3","c4","c5","d1","d2","d5","e1"];
+const checkboxFields=["d3","e2"];
+
+document.getElementById("questionnaireForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  const formData = new FormData(e.target);
+  const entry = {};
+
+  // Handle checkboxes
+  checkboxFields.forEach(field=>{
+    const values = formData.getAll(field);
+    entry[field] = values.join("; ");
+  });
+
+  // Handle other form entries
+  for(const [key,value] of formData.entries()){
+    if(!checkboxFields.includes(key)) entry[key] = value;
+  }
+
+  responses.push(entry);
+  alert("Response Recorded! Total responses: " + responses.length);
+  e.target.reset();
+});
+
+function downloadCSV(){
+  if(responses.length===0){ alert("No data to download."); return; }
+
+  const headers = Object.keys(responses[0]);
+  let csv = [headers.join(",")];
+
+  // Raw data
+  responses.forEach(r => {
+    const row = headers.map(h=>{ const val=r[h]?r[h].toString().replace(/"/g,'""'):""; return /,/.test(val)?`"${val}"`:val; }).join(",");
+    csv.push(row);
+  });
+
+  // Descriptive statistics
+  csv.push(""); csv.push("Descriptive Statistics");
+  numericQuestions.forEach(q=>{
+    const arr = responses.map(r=>parseFloat(r[q])).filter(n=>!isNaN(n));
+    if(arr.length>0){
+      csv.push(`${q},Mean,${mean(arr).toFixed(2)},Median,${median(arr)},Mode,${mode(arr)},StdDev,${stdDev(arr).toFixed(2)}`);
+    }
+  });
+
+  // Correlation and regression for all numeric pairs
+  csv.push(""); csv.push("Correlation & Regression (All Numeric Question Pairs)");
+  for(let i=0;i<numericQuestions.length;i++){
+    for(let j=i+1;j<numericQuestions.length;j++){
+      const xQ = numericQuestions[i]; const yQ = numericQuestions[j];
+      const x = responses.map(r=>parseFloat(r[xQ])).filter(n=>!isNaN(n));
+      const y = responses.map(r=>parseFloat(r[yQ])).filter(n=>!isNaN(n));
+      if(x.length>1 && y.length>1){
+        const corr = pearsonCorrelation(x,y).toFixed(3);
+        const reg = linearRegression(x,y);
+        csv.push(`${xQ} vs ${yQ},Correlation,${corr},Regression,y=${reg.intercept.toFixed(2)}+${reg.slope.toFixed(2)}x`);
+      }
+    }
+  }
+
+  const blob = new Blob([csv.join("\n")], {type:"text/csv"});
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "SME_responses_full_analysis.csv";
+  link.click();
+}
+
+document.getElementById("downloadCsv").addEventListener("click", downloadCSV);
+</script>
+
+</body>
+</html>
